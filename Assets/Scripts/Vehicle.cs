@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Vehicle : MonoBehaviour
 {
@@ -7,6 +7,9 @@ public class Vehicle : MonoBehaviour
     public bool Forward { get; set; }
     public float Speed { get; set; }
     public bool Passed { get; set; }
+
+    [SerializeField] private AudioSource honkSound;
+    [SerializeField] private int honkChance;
 
     private float _playerZ;
 
@@ -24,6 +27,10 @@ public class Vehicle : MonoBehaviour
         else if ((!Passed && transform.position.z < _playerZ) || (Passed && transform.position.z > _playerZ))
         {
                 Passed = !Passed;
+                if (Passed)
+                {
+                    if (Random.Range(0, 100) < honkChance) honkSound.Play();
+                }
                 GameManager.ChangeScore(Passed ? 1 : -1);
         }
         if (transform.position.z < -GameManager.spawnBackwardMax)

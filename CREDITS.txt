@@ -1,3 +1,5 @@
 Vehicle Models: https://assetstore.unity.com/packages/3d/vehicles/land/free-cartoon-car-pack-simple-vehicles-282425
 driving.wav: https://freesound.org/s/401555/
 crash.wav: https://freesound.org/s/237375/
+siren.wav: https://freesound.org/s/70938/
+honk.wav: https://freesound.org/s/406164/
