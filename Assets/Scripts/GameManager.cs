@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         _nextBackwardSpawn = 0f;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Spawn Forward-facing vehicle
         if (_lastForwardVehicle.transform.position.z <= _nextForwardSpawn)
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 
         // Depending on input, move other vehicles forward/back to simulate acceleration/deceleration
         Status playerStatus = player.GetComponent<PlayerController>().Status;
-        float mod = -1f;
+        float mod = -2.5f;
         if (playerStatus == Status.BOOSTING)
         {
             mod = boostPower;

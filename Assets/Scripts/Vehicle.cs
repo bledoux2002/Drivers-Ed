@@ -18,7 +18,7 @@ public class Vehicle : MonoBehaviour
         _playerZ = FindFirstObjectByType<PlayerController>().transform.position.z;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!Forward)
         {

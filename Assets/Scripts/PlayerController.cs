@@ -60,6 +60,10 @@ public class PlayerController : MonoBehaviour
         {
             gm.PauseGame();
         }
+    }
+
+    void FixedUpdate()
+    {
         Move();
         CheckBounds();
     }
